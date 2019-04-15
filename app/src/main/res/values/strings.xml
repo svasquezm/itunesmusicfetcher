@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ITunes Music Fetcher</string>
+    <string name="title_home">Home</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="search">Search</string>
+    <string name="request_failed">Request failed</string>
+    <string name="tracks_status_no_results">No results, try other term</string>
+    <string name="tracks_status_no_favorites">No favorites</string>
+    <string name="tracks_status_first_time">Write a term on Toolbar and search for Tracks!</string>
+    <string name="no_preview_url_for_this_track">No preview URL for this Track</string>
+</resources>
