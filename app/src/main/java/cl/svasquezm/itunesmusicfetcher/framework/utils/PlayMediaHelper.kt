@@ -2,11 +2,7 @@ package cl.svasquezm.itunesmusicfetcher.framework.utils
 
 import android.media.AudioAttributes
 import android.media.MediaPlayer
-import android.os.Environment
 import org.jetbrains.anko.doAsync
-import java.io.FileInputStream
-import java.io.FileOutputStream
-import java.net.URL
 
 class PlayMediaHelper {
     private var currentMediaUrl: String? = null
@@ -15,7 +11,12 @@ class PlayMediaHelper {
     fun playOrStopMedia(mediaUrl: String?, onCompleted: (ItemAdapterPayload) -> Unit) {
         mediaUrl?.let {
             if (currentMediaUrl == mediaUrl) {
+
+                // Remove previous url
+                currentMediaUrl = ""
+
                 onCompleted(ItemAdapterPayload.SHOW_PLAY_ICON)
+                stopCurrentMedia()
             } else {
                 currentMediaUrl = mediaUrl
                 playCurrentMedia(onCompleted)
@@ -23,6 +24,9 @@ class PlayMediaHelper {
         }
     }
 
+    /**
+     * Plays current media sopping last process
+     */
     fun playCurrentMedia(onStreamCompleted: (ItemAdapterPayload) -> Unit) =
         doAsync {
             if (mediaPlayer != null) {

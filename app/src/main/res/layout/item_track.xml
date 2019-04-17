@@ -26,6 +26,7 @@
 
     <TextView
             android:id="@+id/bandName"
+            android:singleLine="true"
             android:text="Metallica"
             android:textSize="16dp"
             android:layout_width="0dp"
@@ -37,6 +38,8 @@
 
     <TextView
             android:id="@+id/title"
+            android:singleLine="true"
+
             android:text="Nothng else matterns"
             android:textSize="12dp"
             android:layout_width="0dp"

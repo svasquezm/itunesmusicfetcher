@@ -69,7 +69,11 @@ class MainActivity : AppCompatActivity(), KodeinAware {
 
         // Click listener for adapter to play/stop a track preview
         adapter.onPlayStopImageClickListener = { track, i ->
+
+            // Restore last itemview to show a "play" icon again
             adapter.notifyItemChangedRerstoringPrevious(i, ItemAdapterPayload.SHOW_LOADING)
+
+            // Play or Stop a song (depending of curent status)
             viewModel!!.playOrStopASong(track, callback = {
                 adapter.notifyItemChanged(i, it)
             }, onFailed = {
